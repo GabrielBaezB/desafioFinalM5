@@ -1,18 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
+<div class="container-sm">
+  <div class="static-container bg-black p-3">
+    <h4 class="text-white">Bienvenidos a Twitter</h2>
+    <button class="btn btn-primary" onclick="location.href='<%= new_tweet_path %>'">Nuevo tweet</button>
 
-<h1>Tweets</h1>
-<%= form_tag(tweets_path, method: "get") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Buscar tweets..." %>
-  <%= submit_tag "Buscar" %>
-<% end %>
+  </div>
+  <div class="movable-container bg-black p-3" id="tweets-container" draggable="true">
+    <div id="tweets">
+      <% @tweets.each do |tweet| %>
+        <%= render tweet %>
+          <% end %>
+    </div>
+    <div class="container-mas">
+      <%= link_to "Ver más", tweets_path(page: @tweets.next_page), remote: true, id: "load-more-tweets", class: "text-center" %>
+    </div>
 
-<div id="tweets">
-  <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
-    </p>
-  <% end %>
+  </div>
+  <div class="static-container bg-black p-3">
+    <div class="rounded-pill">
+      <%= form_tag(tweets_path, method: "get" ) do %>
+        <div class="form-control-icon">
+          <i class="fa fa-search px-2"></i>
+          <%= text_field_tag :search, params[:search], class: "form-control rounded-pill px-5", style: "width: 100%",
+            placeholder: "Buscar en Twitter" %>
+        </div>
+        <% end %>
+    </div>
+  </div>
 </div>
-<%= paginate @tweets %>
-<%= link_to "New tweet", new_tweet_path %>

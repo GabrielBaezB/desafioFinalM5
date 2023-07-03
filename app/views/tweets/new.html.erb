@@ -1,9 +1,13 @@
-<h1>New tweet</h1>
-
-<%= render "form", tweet: @tweet %>
-
-<br>
-
-<div>
-  <%= link_to "Back to tweets", tweets_path %>
+<div class="text-center">
+  <h1 class="text-white mt-2">Nuevo tweet</h1>
+  
+  <div class="container-form">
+    <%= render "form", tweet: @tweet %>
+  </div>
+  
+  <br>
+  
+  <div class="container-link">
+    <%= link_to "Volver", tweets_path %>
+  </div>
 </div>

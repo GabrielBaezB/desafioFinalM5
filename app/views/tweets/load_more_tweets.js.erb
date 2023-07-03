@@ -1,0 +1,6 @@
+$('#tweets').append("<%= j render(@tweets) %>");
+<% if @tweets.next_page %>
+  $('#load-more-tweets').attr('href', '<%= j tweets_path(page: @tweets.next_page) %>');
+<% else %>
+  $('#load-more-tweets').remove();
+<% end %>

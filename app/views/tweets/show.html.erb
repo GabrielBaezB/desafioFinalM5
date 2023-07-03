@@ -1,10 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
 
-<%= render @tweet %>
+<div class="d-flex align-items-center">
+  <%= link_to tweets_path, class: "btn btn-primary ml-2 mr-2" do %>
+    <i class="fas fa-arrow-left"></i> Volver
+  <% end %>
+  
+  <%= render @tweet %>
 
-<div>
-  <%= link_to "Edit this tweet", edit_tweet_path(@tweet) %> |
-  <%= link_to "Back to tweets", tweets_path %>
+  <div class="ml-auto">
+    <%= link_to edit_tweet_path(@tweet), class: "btn btn-info mr-2" do %>
+      <i class="fas fa-edit"></i> Editar tweet
+    <% end %>
 
-  <%= button_to "Destroy this tweet", @tweet, method: :delete %>
+    <%= button_to @tweet, method: :delete, data: { confirm: false }, class: "btn btn-danger" do %>
+      <i class="fas fa-trash-alt"></i> Eliminar tweet
+    <% end %>
+  </div>
 </div>

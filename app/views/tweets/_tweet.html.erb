@@ -1,12 +1,23 @@
-<div id="<%= dom_id tweet %>">
-  <p>
-    <strong>Description:</strong>
-    <%= tweet.description %>
-  </p>
+<div class="container ml-5">
+  <%= link_to tweet_path(tweet), class: "card-link" do %>
+    <div class="card" id="<%= dom_id tweet %>">
+      <div class="card-header d-flex align-items-center">
+        <%= image_tag(tweet.userAvatar, alt: "Foto de perfil", class: "img-fluid rounded-circle", style: "width: 40px; height: 40px;") %>
+        <span class="ml-2 align-middle">
+          <%= tweet.UserName %>
+        </span>
+      </div>
+      <div class="card-body">
+        <%= tweet.description %>
+      </div>
 
-  <p>
-    <strong>Username:</strong>
-    <%= tweet.UserName %>
-  </p>
-
+      <div class="card-footer d-flex justify-content-center">
+        <i class="far fa-comment float-right mx-5">1</i>
+        <i class="fa fa-retweet float-right mx-5">2</i>
+        <i class="far fa-heart float-right mx-5">90</i>
+        <i class="fa fa-bar-chart float-right mx-5">5.320</i>
+        <i class="fas fa-upload float-right mx-5"></i>
+      </div>
+    </div>
+    <% end %>
 </div>
