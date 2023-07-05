@@ -11,13 +11,9 @@ development:
   database: railway
   username: postgres
   password: GpB8kAN9VSdor8UJZpbl
-  host: containers-us-west-132.railway.app
-  port: 5739
+  host: localhost
+  port: 5432
 
 production:
   <<: *default
-  database: railway
-  username: postgres
-  password: GpB8kAN9VSdor8UJZpbl
-  host: containers-us-west-132.railway.app
-  port: 5739
+ url: <%= ENV['DATABASE_URL'] %>
