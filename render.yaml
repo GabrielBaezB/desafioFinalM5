@@ -1,7 +1,7 @@
 databases:
-  - name: desafioFinalM5
-    databaseName: desafioFinalM5
-    user: desafioFinalM5
+  - name: desafiofinal
+    databaseName: desafiofinal
+    user: desafiofinal
 
 services:
   - type: web
