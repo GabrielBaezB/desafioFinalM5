@@ -10,7 +10,7 @@ development:
   <<: *default
   database: railway
   username: postgres
-  password: GpB8kAN9VSdor8UJZpbl
+  password: ror2023
   host: localhost
   port: 5432
 
