@@ -8,12 +8,7 @@ default: &default
 
 development:
   <<: *default
-  database: desafiofinal_3h1y
-  username: desafiofinal
-  password: uqglJXXP2USyKripK2hr7ZsSZEZtlJos
-  host: postgres://desafiofinal:uqglJXXP2USyKripK2hr7ZsSZEZtlJos@dpg-ciiukjdgkuvhnnacmlhg-a/desafiofinal_3h1y
-  port: 5432
-
+  
 production:
   <<: *default
  url: <%= ENV['DATABASE_URL'] %>
