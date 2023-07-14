@@ -243,7 +243,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap
   capybara
   debug
   faker (~> 3.0)
